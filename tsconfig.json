@@ -15,9 +15,6 @@
       },
       "resolveJsonModule": true
     },
-    "files": [
-      "@types/express/index.d.ts"
-    ],
     "include": [
       "src/**/*"
     ]
