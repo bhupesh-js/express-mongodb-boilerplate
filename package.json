@@ -1,0 +1,19 @@
+{
+  "name": "express-mongodb-boilerplate",
+  "version": "1.0.0",
+  "description": "A Boilerplate with express.js and MongoDB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bhupesh-js/express-mongodb-boilerplate.git"
+  },
+  "author": "bhupesh.bangalore8@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bhupesh-js/express-mongodb-boilerplate/issues"
+  },
+  "homepage": "https://github.com/bhupesh-js/express-mongodb-boilerplate#readme"
+}
