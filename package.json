@@ -4,7 +4,12 @@
   "description": "A Boilerplate with express.js and MongoDB",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/server.ts",
+    "start:dev": "nodemon src/server.ts",
+    "eslint": "eslint src/server.ts",
+    "lint": "eslint --ext .ts ./src",
+    "fix-lint": "./node_modules/eslint/bin/eslint.js  src --ext .ts --fix"
   },
   "repository": {
     "type": "git",
