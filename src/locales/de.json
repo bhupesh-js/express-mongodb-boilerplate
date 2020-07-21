@@ -1,0 +1,33 @@
+{
+	"DEFAULT_ERRORS": {
+		"SERVER_ERROR": "Die Anforderung konnte aufgrund eines vom Server aufgetretenen Fehlers nicht abgeschlossen werden. Bitte versuchen Sie es später noch einmal.",
+		"TEMPORARILY_UNAVAILABLE": "Dienst derzeit nicht verfügbar. Bitte versuchen Sie es später noch einmal.",
+		"INVALID_REQUEST": "Die Anfrage konnte aufgrund einer ungültigen Anfrage nicht abgeschlossen werden. Bitte überprüfen Sie Ihre Anfrage und versuchen Sie es erneut.",
+		"NOT_FOUND": "Angeforderte Ressource nicht gefunden.",
+		"VALIDATION_ERROR": "Die Anforderung konnte aufgrund ungültiger Parameter nicht abgeschlossen werden. Bitte überprüfen Sie die bereitgestellten Einträge und versuchen Sie es erneut."
+	},
+	"AUTH_ERRORS": {
+		"UNAUTHORIZED": "Der Benutzer ist nicht berechtigt, die Anfrage zu stellen.",
+		"INVALID_TOKEN": "Die für die Anforderung angegebenen Berechtigungsnachweise sind ungültig. Überprüfen Sie den Wert des HTTP-Anforderungsheaders für die Autorisierung.",
+		"EXPIRED_TOKEN": "Sitzung abgelaufen. Überprüfen Sie den Wert des HTTP-Anforderungsheaders für die Autorisierung.",
+		"REQUIRED_TOKEN": "Der Benutzer muss angemeldet sein, um diese API-Anforderung zu stellen. Überprüfen Sie den Wert des HTTP-Anforderungsheaders für die Autorisierung."
+	},
+	"USR_ACC_ERRORS": {
+		"USR_ACC_NEW_MISSING_EMAIL": "Bitte geben Sie eine E-Mail-Adresse an, um sich zu registrieren",
+		"USR_ACC_NEW_INVALID_EMAIL": "Bitte geben Sie eine gültige E-Mail-Adresse an, um sich zu registrieren",
+		"USR_ACC_NEW_EMAIL_EXISTS": "Mit dieser E-Mail-Adresse ist bereits ein Konto registriert. Bitte verwenden Sie eine andere E-Mail-Adresse, um die Registrierung abzuschließen",
+		"USR_ACC_NEW_MISSING_PWD": "Bitte geben Sie ein Passwort an, um sich zu registrieren",
+		"USR_ACC_NEW_INVALID_NAME": "Bitte geben Sie einen gültigen Namen an, um sich zu registrieren",
+		"USR_ACC_LOGIN_MISSING_EMAIL": "Bitte geben Sie eine E-Mail-Adresse an, um sich anzumelden",
+		"USR_ACC_LOGIN_INVALID_EMAIL": "Bitte geben Sie eine gültige E-Mail-Adresse an, um sich anzumelden",
+		"USR_ACC_LOGIN_MISSING_PWD": "Bitte geben Sie ein Passwort an, um sich anzumelden",
+		"USR_ACC_LOGIN_INVALID_CRE": "Bitte geben Sie einen gültigen Benutzernamen und ein Passwort an, um sich anzumelden",
+		"USR_ACC_RESET_MISSING_EMAIL": "Bitte geben Sie eine E-Mail-Adresse an, um das Passwort zurückzusetzen",
+		"USR_ACC_RESET_INVALID_EMAIL": "Wir können kein Konto mit dieser E-Mail-Adresse finden",
+		"USR_ACC_RESET_INVALID_RESET_CODE": "Bitte geben Sie einen gültigen Rücksetzcode an",
+		"USR_ACC_RESET_MISSING_PWD": "Bitte geben Sie ein Passwort an",
+		"USR_ACC_RESET_MISSING_NEW_PWD": "Bitte geben Sie ein neues Passwort an"
+	}
+}
+
+
