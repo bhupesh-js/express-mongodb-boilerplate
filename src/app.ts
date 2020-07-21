@@ -7,6 +7,7 @@ import { WWW_PORT } from './helpers/config';
 import ApplicationError from './helpers/error/applicationError';
 import logger from './helpers/logger';
 import { NotFound, isHandled } from './helpers/error/httpResponseErrors';
+import { user, book } from './routes';
 
 const app = express();
 
@@ -42,6 +43,10 @@ app.use(express.static(path.join(__dirname, 'public'), { maxAge: 417600000 }));
 // set up i18n
 app.use(i18n.init);
 
+
+// set up routers
+app.use(user);
+app.use(book);
 
 // not found handler
 app.use((req, res, next) => {
