@@ -1,7 +1,8 @@
 import path from 'path';
 import i18n from 'i18n';
 import express, { Request, Response, NextFunction } from 'express';
-
+import helmet from 'helmet';
+import compression from 'compression';
 import { WWW_PORT } from './helpers/config';
 import ApplicationError from './helpers/error/applicationError';
 import logger from './helpers/logger';
@@ -10,6 +11,11 @@ import { user, book } from './routes';
 
 const app = express();
 
+// Compression
+app.use(compression());
+
+// secure HTTP headers
+app.use(helmet());
 
 // parse body
 app.use(express.json());
