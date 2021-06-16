@@ -1,4 +1,3 @@
-import bodyParser from 'body-parser';
 import path from 'path';
 import i18n from 'i18n';
 import express, { Request, Response, NextFunction } from 'express';
@@ -12,9 +11,9 @@ import { user, book } from './routes';
 const app = express();
 
 
-// set up bodyParser
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+// parse body
+app.use(express.json());
+app.use(express.urlencoded());
 
 
 // init i18n
