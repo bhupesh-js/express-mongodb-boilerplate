@@ -7,7 +7,7 @@ export class Server {
   express:any;
 
   constructor() {
-    setupLogger(process.env.NODE_ENV, process.env.LOG_LEVEL);
+    setupLogger(process.env.LOG_LEVEL);
     const logger = new Logger(__filename);
     logger.info(`www - init node environment - ${process.env.NODE_ENV}`);
 
@@ -34,8 +34,9 @@ export class Server {
 
 
     Application().listen(WWW_PORT, (): void => {
-  logger.info('\x1b[36m%s\x1b[0m', // eslint-disable-line
-        `🌏 Express server started at http://localhost:${WWW_PORT}`);
+      logger.info(
+        `🌏 Express server started at http://localhost:${WWW_PORT}`
+      );
     });
   }
 }
