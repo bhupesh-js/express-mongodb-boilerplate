@@ -3,7 +3,7 @@ import {
 } from 'express';
 import Joi from '@hapi/joi';
 import { ValidationError } from '../helpers/error/httpResponseErrors';
-import logger from '../helpers/logger';
+import { Logger } from '../helpers/logger';
 
 /**
    * Get error message from Joi
@@ -35,6 +35,7 @@ export const requestValidator = (
   handler: RequestHandler,
   options?: HandlerOptions,
 ): RequestHandler => async (req: Request, res: Response, next: NextFunction) => {
+  const log = new Logger(__filename);
   if (options?.validation?.body) {
     const { error } = options?.validation?.body.validate(req.body);
     if (error != null) {
@@ -44,11 +45,7 @@ export const requestValidator = (
 
   return handler(req, res, next).catch((err: Error) => {
     if (process.env.NODE_ENV === 'development') {
-      logger.log({
-        level: 'error',
-        message: 'Error in request handler',
-        error: err
-      });
+      log.error('Error in request handler');
     }
     next(err);
   });

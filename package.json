@@ -5,10 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/server.ts",
-    "start:dev": "nodemon src/server.ts",
+    "start": "set NODE_ENV=production && node dist/index.js",
+    "dev": "nodemon ./src/index.ts",
     "eslint": "eslint src/server.ts",
     "lint": "eslint --ext .ts ./src",
+    "build": "tsc -p .",
     "fix-lint": "./node_modules/eslint/bin/eslint.js  src --ext .ts --fix"
   },
   "repository": {
@@ -24,6 +25,7 @@
   "dependencies": {
     "@hapi/joi": "^17.1.1",
     "bcrypt": "^5.0.0",
+    "chalk": "^4.1.1",
     "compression": "^1.7.4",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
@@ -31,8 +33,8 @@
     "i18n": "^0.10.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.10",
-    "winston": "^3.3.3",
-    "winston-loggly-bulk": "^3.1.0"
+    "morgan": "^1.10.0",
+    "winston": "^3.3.3"
   },
   "devDependencies": {
     "@types/bcrypt": "^3.0.0",
@@ -44,7 +46,6 @@
     "@types/jsonwebtoken": "^8.5.0",
     "@types/mongoose": "5.7.12",
     "@types/node": "13.13.2",
-    "@types/winston-loggly-bulk": "^3.0.0",
     "@typescript-eslint/eslint-plugin": "2.29.0",
     "@typescript-eslint/parser": "2.29.0",
     "eslint": "6.8.0",
