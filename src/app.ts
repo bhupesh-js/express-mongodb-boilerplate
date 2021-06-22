@@ -1,15 +1,17 @@
 import path from 'path';
 import i18n from 'i18n';
 import express, {
-  Request, Response, NextFunction, Express
+  Request, Response, NextFunction
 } from 'express';
 import helmet from 'helmet';
 import compression from 'compression';
+import * as httpContext from 'express-http-context';
 import { WWW_PORT } from './helpers/config';
 import ApplicationError from './helpers/error/applicationError';
 import { NotFound, isHandled } from './helpers/error/httpResponseErrors';
 import router from './routes';
 import { Logger } from './helpers/logger';
+import { contextHandler, LogHandler } from './middleware';
 
 const Application = ():any => {
   const app = express();
@@ -22,8 +24,10 @@ const Application = ():any => {
 
   // parse body
   app.use(express.json());
-  app.use(express.urlencoded());
+  app.use(express.urlencoded({ extended: true }));
 
+  // HTTP context
+  app.use(httpContext.middleware);
 
   // init i18n
   i18n.configure({
@@ -51,6 +55,9 @@ const Application = ():any => {
   // set up i18n
   app.use(i18n.init);
 
+  // context middleware
+  app.use(contextHandler);
+  app.use(LogHandler);
   // set up router
   app.use(router);
 
