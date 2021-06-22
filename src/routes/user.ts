@@ -7,8 +7,8 @@ import { responseFormatHandler } from '../middleware/responseFormat';
 const router = Router();
 
 // User routes
-router.post('/account/login', UserController.login, responseFormatHandler);
-router.post('/account/register', UserController.register, responseFormatHandler);
-router.patch('/account/update', authenticationHandler, UserController.update, responseFormatHandler);
+router.post('/login', UserController.login, responseFormatHandler);
+router.post('/register', UserController.register, responseFormatHandler);
+router.patch('/update', authenticationHandler, UserController.update, responseFormatHandler);
 
 export default router;
