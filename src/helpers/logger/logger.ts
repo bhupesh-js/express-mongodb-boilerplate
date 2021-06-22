@@ -2,6 +2,7 @@
 import * as path from 'path';
 import * as winston from 'winston';
 import { ILogger } from './logger.interface';
+import { Context } from '../context';
 
 export class Logger implements ILogger {
     public static DEFAULT_SCOPE = 'app';
@@ -41,10 +42,18 @@ export class Logger implements ILogger {
     }
 
     private log(level: string, message: string, args: any[]): void {
-      winston.log(level, `${this.formatScope()} ${message}`, args);
+      winston.log(level, `${this.formatScope()} ${this.appendRequestId(message)}`, args);
     }
 
     private formatScope(): string {
       return `[${this.scope}]`;
+    }
+
+    private appendRequestId(message: string): string {
+      const requestId = Context.getRequestId();
+      if (requestId) {
+        return `-- Request Id ${requestId}: ${message}`;
+      }
+      return message;
     }
 }
